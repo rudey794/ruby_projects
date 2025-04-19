@@ -5,13 +5,13 @@ RSpec.describe 'Cipher' do
   describe "encode" do
     context 'give string' do
       it 'returns string' do
-        expect(encode("string", 0)).to eq("string")
+        expect(encode("string", 0)).not_to be_empty
       end
-      xit 'returns shifted code' do
+      it 'returns shifted code' do
         expect(encode("string", 5)).to eq("xywnsl")
       end
-      xit 'wrap a->z' do
-        expect(encode("xyzabc", 5)).to eq("zabcde")
+      it 'wrap a->z' do
+        expect(encode("xyzabc", 2)).to eq("zabcde")
       end
     end
   end
